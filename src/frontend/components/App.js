@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import Navigation from './Navbar';
 import Home from './Home.js'
+import Form from '../UploadForm/Form.js/Forms.js'
 import Create from './Create.js'
 import MyListedItems from './MyListedItems.js'
 import MyPurchases from './MyPurchases.js'
@@ -14,12 +15,13 @@ import NFTAbi from '../contractsData/NFT.json'
 import NFTAddress from '../contractsData/NFT-address.json'
 import { useState } from 'react'
 import { ethers } from "ethers"
-import { Spinner } from 'react-bootstrap'
+import { Card, Spinner } from 'react-bootstrap'
 
 import './App.css';
+import Admin from "./Admin/Admin";
 
 function App() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [account, setAccount] = useState(null)
   const [nft, setNFT] = useState({})
   const [marketplace, setMarketplace] = useState({})
@@ -66,8 +68,14 @@ function App() {
           ) : (
             <Routes>
               <Route path="/" element={
-                <Home marketplace={marketplace} nft={nft} />
+                <Admin></Admin>
               } />
+              {/* <Route path="/" element={
+                <Form></Form>
+              } /> */}
+              {/* <Route path="/" element={
+                <Home marketplace={marketplace} nft={nft} />
+              } /> */}
               <Route path="/create" element={
                 <Create marketplace={marketplace} nft={nft} />
               } />

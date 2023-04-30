@@ -1,0 +1,41 @@
+.card{
+    background-color: antiquewhite;
+    width: 70%;
+    margin: auto;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5rem;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+}
+
+.details{
+    width: 100%;
+}
+
+.image img{
+    width:250px;
+    height: 250px;
+    border-radius: 0.5rem;
+}
+
+.heading{
+    margin: auto;
+    font-size: 1.5rem;
+    font-style: normal;
+}
+
+.line{
+    margin: auto;
+    height: 0.2rem;
+    width: 5rem;
+    background-color: brown;
+    margin-bottom: 2rem;
+}
+
+.collageName{
+    display: flex;
+    flex-direction: row;
+    margin-left: 2rem;
+}

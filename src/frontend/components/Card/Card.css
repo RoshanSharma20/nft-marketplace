@@ -1,0 +1,28 @@
+.box{
+    background-color: #61dafb;
+    width: 60%;
+    height: 4rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    margin:auto;
+    margin-bottom: 2rem;
+}
+
+.detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.name h2{
+    font-size: 1.5rem;
+}
+
+.uploadIcon{
+    height: 2rem;
+    width: 2rem;
+}
+
+.uploadBtn h1{
+    font-size: 1.5rem;
+}
