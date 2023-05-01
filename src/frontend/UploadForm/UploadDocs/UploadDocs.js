@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import FileList from '../FileList/FileList.js'
@@ -28,25 +28,18 @@ function UploadDocs (){
     const uploadHandler = (event) => {
         const currentFile = event.target.files[0] ;
         console.log("currentFile ", currentFile);
+           
+        setFile(currentFile) ;
+        console.log("file ", file);
 
-        // const previewImage = URL.createObjectURL(currentFile) ;
-        // console.log("previewImage ", previewImage);
+        const previewImage = URL.createObjectURL(currentFile) ;
+        console.log("previewImage ", previewImage);
 
         const progress = Math.round((100 * event.loaded) / event.total);
 
-        console.log("file " , file);
+        setFiles([...files, currentFile]) ;
 
-        setFile(currentFile) ;
-
-        console.log("file " , file);
-
-        // file.isUploading = true ;
-        // if(!file) return ;
-
-        setFiles([...files, file]) ;
-
-        console.log("files " + files);
-        //upload file
+        // upload file
         // const formData = new FormData() ;
         // formData.append(
         //     file.name,
@@ -60,7 +53,7 @@ function UploadDocs (){
         <div className='upload-col'>
             <div className='file-card'>
                 <div className='file-inputs'>
-                    <input type='file' onChange={uploadHandler}/>
+                    <input type='file' multiple={true} onChange={uploadHandler}/>
                     <button className='upload-button'>
                         <i>
                             <FontAwesomeIcon icon={faPlus} />

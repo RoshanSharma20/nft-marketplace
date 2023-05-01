@@ -9,9 +9,8 @@ const FileList = ({files, removeFiles}) => {
         <ul>
             {
                 files.map((file, index) => {
-                    console.log(file);
                     return (
-                        <FileItem key={index} file={file.currentFile} removeFiles = {removeFiles}/>
+                        <FileItem file={file} removeFiles = {removeFiles} key={index} />
                     );
                 })
             }

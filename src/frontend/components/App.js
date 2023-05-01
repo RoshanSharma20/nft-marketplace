@@ -67,12 +67,12 @@ function App() {
             </div>
           ) : (
             <Routes>
-              <Route path="/" element={
-                <Admin></Admin>
-              } />
               {/* <Route path="/" element={
-                <Form></Form>
+                <Admin></Admin>
               } /> */}
+              <Route path="/" element={
+                <Form></Form>
+              } />
               {/* <Route path="/" element={
                 <Home marketplace={marketplace} nft={nft} />
               } /> */}
